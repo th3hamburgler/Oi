@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head >
+		<title>Configuration</title>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+		
+		<link href="./css/userguide.css" media="screen" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="./js/jquery-1.3.2.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.nav.js"></script>
+		<script type="text/javascript" src="./js/chili.js"></script>
+		<script type="text/javascript" src="./js/chili/jquery.chili-2.2.js"></script>
+		<script type="text/javascript" src="./js/chili/recipes.js"></script>
+		
+	</head>
+
+<body>
+
+	<!-- START NAVIGATION -->
+	<div id="nav">
+		<div id="nav_inner">
+			<table cellpadding="0" cellspaceing="0" border="0" style="width:98%">
+	<tr>
+			<td class="td" valign="top">
+					<h3></h3>
+			<ul>
+								<li><a href="./index.html">User Guide Home</a></li>
+							</ul>
+				</td>
+			<td class="td" valign="top">
+					<h3>Basic Info</h3>
+			<ul>
+								<li><a href="./change_log.html">Change Log</a></li>
+								<li><a href="./server_req.html">Server Requirements</a></li>
+								<li><a href="./troubleshooting.html">Troubleshooting</a></li>
+							</ul>
+				</td>
+			<td class="td" valign="top">
+					<h3>Installation</h3>
+			<ul>
+								<li><a href="./downloading.html">Downloading</a></li>
+								<li><a href="./installation.html">Installation</a></li>
+							</ul>
+				</td>
+			<td class="td" valign="top">
+					<h3>General Topics</h3>
+			<ul>
+								<li><a href="./adding_notifications.html">Adding Notifications</a></li>
+								<li><a href="./configuration.html">Configuration</a></li>
+								<li><a href="./retrieving_notifications.html">Retrieving Notifications</a></li>
+							</ul>
+				</td>
+		<tr>
+</table>		</div>
+	</div>
+	
+	<div id="nav2">
+		<a name="top">&nbsp;</a>
+		<a id="nav_toggle" href="#">
+			<img src="./images/nav_toggle_darker.jpg" width="154" height="43" border="0" title="Toggle Table of Contents" alt="Toggle Table of Contents" />
+		</a>
+	</div>
+	
+	<div id="masthead">
+		<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+			<tr>
+				<td><h1>Oi</h1></td>
+				<td id="breadcrumb_right"><a href="./toc.html">Table of Contents Page</a></td>
+			</tr>
+		</table>
+	</div>
+	<!-- END NAVIGATION -->
+	
+	<!-- START BREADCRUMB -->
+	<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
+		<tr>
+			<td id="breadcrumb">
+				<a href="http://www.stucktogetherwithtape.couk/user_guides/oi">Oi</a> 
+				&nbsp;&#8250;&nbsp;
+				<a href="..html">User Guide Home</a> 
+			</td>
+		</tr>
+	</table>
+	<!-- END BREADCRUMB -->
+	
+	<br clear="all" />		<!-- START CONTENT -->
+		<div id="content">
+			<h1>Configuration</h1>
+
+			<p>Oi has some configuration settings which you can customise to suit your needs.  They will apply to all your alerts unless overridden at a latter stage.</p>
+			
+			<table cellpadding="0" cellspacing="1" border="0" style="width:100%" class="tableborder">
+				<tbody>
+					<tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Description</th>
+						<th>Default</th>
+						<th>Since Ver.</th>
+					</tr>
+					<tr>
+						<td><strong>default_class</strong></td>
+						<td>String</td>
+						<td>A default class given to all notifications</td>
+						<td><dfn>'oi'</dfn></td>
+						<td><i>1.0</i></td>
+					</tr>
+					<tr>
+						<td><strong>class_prefix</strong></td>
+						<td>String</td>
+						<td>If set, will be prefixed to the <em>alert type</em> class.</td>
+						<td><dfn>NULL</dfn></td>
+						<td><i>1.0</i></td>
+					</tr>
+					<tr>
+						<td><strong>alert_element</strong></td>
+						<td>String</td>
+						<td>The HTML element the alert is contained within</td>
+						<td><dfn>'p'</dfn></td>
+						<td><i>1.0</i></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<p>To modify your settings, open the <var>application/config/oi.php</var> file with a text editor and set your preferred configuration settings.</p>
+
+		</div>
+		<!-- END CONTENT -->
+	<!-- START FOOTER -->	
+	<div id="footer">
+		<p><a href="#top">Top of Page</a></p>
+		<div id="copyrights">
+			<p>
+				<a href="http://www.stucktogetherwithtape.couk/user_guides/oi">Oi v1.0</a> 
+				&nbsp;&middot;&nbsp; Copyright &copy; 2009 &nbsp;&middot;&nbsp; 
+				<a href="http://www.stucktogetherwithtape.couk">Jim Wardlaw</a>			</p>
+			<p>
+				<a href="http://codeigniter.com">CodeIgniter</a> 
+				&nbsp;&middot;&nbsp; Copyright &#169; 2006-2008 &nbsp;&middot;&nbsp; 
+				<a href="http://ellislab.com/">Ellislab, Inc.</a> 
+			</p>
+		</div>
+	</div>
+	<!-- END CONTENT -->
+
+</body>
+</html>
