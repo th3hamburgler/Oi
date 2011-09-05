@@ -1,3 +1,86 @@
 # Oi!
 
 Oi is a simple library for creating and displaying notification in Codeigniter websites.
+
+## Installation Instructions
+
+Install Oi in three simple steps!
+
+- Download the latest version and unzip it
+- Upload the application/libraries/oi.php file to your CodeIgniter application/libraries folder.
+- Upload the application/config/oi.php file to your CodeIgniter application/config folder.
+
+That's it!
+
+## Adding Notifications
+
+Oi uses the php magic method __call() to add any number of different alert types to your application.
+
+### $this->oi->add_{type}()
+
+This method will add an alert to Oi. The first parameter is the alert contents (string).
+
+	$this->oi->add_message('Hello World');
+
+Will create the following html notification
+
+	<p class="oi message">Hello World</p>
+	
+The second parameter can be used to add any extra attributes to the alert. Pass an associative 	Array.
+
+	$attr = array('id' => 'error-127', 'title' => 'You really should fix this...'); 
+             
+	$this->oi->add_error('Oops, something went wrong', $attr);
+
+Will create the following html notification 
+ 
+	<p class="oi error" id="error-127" title="'You really should fix this..." >Oops, something went wrong</p>
+
+- message - $this->oi->add_message()
+- success - $this->oi->add_success()
+- warning - $this->oi->add_warning()
+- error - $this->oi->add_error()
+
+You are not limited to these and the type may be any string you choose. You can even add extra classes to your alerts and include HTML in you alert string.
+
+	$attr = array('class' => 'my-class'); 
+             
+	$this->oi->add_somereallystupidlylongalertname('<a href="mylink.html">Click</a> me', $attr);
+
+Will create the following html notification
+
+	<p class="oi somereallystupidlylongalertname my-class" ><a href="mylink.html">Click</a> me</p>
+
+## Retrieving Notifications
+
+Generally you should only retrieve notifications from oi within a view. This will mean if a redirect is triggered in your controller any alerts will be retained in the session and displayed in on the next page.
+
+### $this->oi->messages()
+
+Call messages to return all alerts in the session as a string
+
+	$this->oi->messages('');
+
+If you only wish to return messages of a given type, set the first parameter.
+
+	$this->oi->messages('success');
+
+Finally, once a notification has been returned it will automatically be removed from the session unless the second parameter is set to TRUE
+
+	// return all success messages but keep them in the session 
+	$this->oi->messages('success', TRUE); 
+
+	// return all messages and keep them all in the session 
+	$this->oi->messages(NULL, TRUE);
+
+### $this->oi->has_messages()
+
+The has_messages method can be used to check if there are any messages awaiting display.
+
+This is useful if you would like to wrap messages in a container:
+
+	<? if($this->oi->has_messages(''):?>  
+	    <div class="oi-wrapper"> 
+	        <? echo $this->oi->messages(NULL)?> 
+	    </div> 
+	<? endif?>
